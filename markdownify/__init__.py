@@ -159,7 +159,7 @@ class MarkdownConverter(object):
             text = whitespace_re.sub(' ', text)
 
         if el.parent.name != 'code' and el.parent.name != 'pre':
-            text = self.escape(text)
+            text = self.escape(all_whitespace_re.sub(' ', text))
 
         # remove trailing whitespaces if any of the following condition is true:
         # - current text node is the last node in li
